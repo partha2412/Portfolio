@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+// src/App.jsx
+
+import React, { useEffect, useState } from 'react';
+
 import { fetchPortfolioData } from './services/api';
 import { mockData } from './data/initialData';
 
@@ -13,15 +16,25 @@ import { Admin } from './components/Admin';
 import './admin.css';
 
 export const App = () => {
+  // Initial data is available immediately.
+  // Backend data will replace it when the API responds.
   const [data, setData] = useState(mockData);
+
   const [isAdminView, setIsAdminView] = useState(false);
 
+  // Fetch real backend data in the background
   const getData = async () => {
     try {
       const result = await fetchPortfolioData();
-      setData(result);
-    } catch (err) {
-      console.error("Using fallback data", err);
+
+      if (result) {
+        setData(result);
+      }
+    } catch (error) {
+      console.error(
+        'Failed to fetch portfolio data. Using initial data.',
+        error
+      );
     }
   };
 
@@ -32,30 +45,50 @@ export const App = () => {
   return (
     <div className="portfolio-app">
 
+      {/* ================= NAVBAR ================= */}
+
       <nav className="navbar">
         <div className="nav-container">
 
           <span className="logo">
-            {data?.profile?.name || "Portfolio"}
+            {data?.profile?.name || 'Portfolio'}
           </span>
 
           <ul className="nav-links">
 
             {!isAdminView && (
               <>
-                <li><a href="#hero">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li>
+                  <a href="#hero">About</a>
+                </li>
+
+                <li>
+                  <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                  <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                  <a href="#experience">Experience</a>
+                </li>
+
+                <li>
+                  <a href="#education">Education</a>
+                </li>
+
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
               </>
             )}
 
             <li>
               <button
-                onClick={() => setIsAdminView(!isAdminView)}
+                onClick={() => setIsAdminView((prev) => !prev)}
                 className="admin-toggle-btn"
+                type="button"
               >
                 {isAdminView
                   ? '← Back to Portfolio'
@@ -64,50 +97,92 @@ export const App = () => {
             </li>
 
           </ul>
+
         </div>
       </nav>
 
+      {/* ================= ADMIN ================= */}
+
       {isAdminView ? (
+
         <div style={{ paddingTop: '80px' }}>
           <Admin onSaveSuccess={getData} />
         </div>
+
       ) : (
+
         <>
-          <section id="hero" className="section-wrapper">
+          {/* ================= HERO ================= */}
+
+          <section
+            id="hero"
+            className="section-wrapper"
+          >
             <div className="section-content">
-              <Hero profile={data.profile} />
+              <Hero profile={data?.profile} />
             </div>
           </section>
 
-          <section id="skills" className="section-wrapper">
+
+          {/* ================= SKILLS ================= */}
+
+          <section
+            id="skills"
+            className="section-wrapper"
+          >
             <div className="section-content">
-              <Skills skills={data.skills} />
+              <Skills skills={data?.skills} />
             </div>
           </section>
 
-          <section id="projects" className="section-wrapper">
+
+          {/* ================= PROJECTS ================= */}
+
+          <section
+            id="projects"
+            className="section-wrapper"
+          >
             <div className="section-content">
-              <Projects projects={data.projects} />
+              <Projects projects={data?.projects} />
             </div>
           </section>
 
-          <section id="experience" className="section-wrapper">
+
+          {/* ================= EXPERIENCE ================= */}
+
+          <section
+            id="experience"
+            className="section-wrapper"
+          >
             <div className="section-content">
-              <Experience experiences={data.experiences} />
+              <Experience experiences={data?.experiences} />
             </div>
           </section>
 
-          <section id="education" className="section-wrapper">
+
+          {/* ================= EDUCATION ================= */}
+
+          <section
+            id="education"
+            className="section-wrapper"
+          >
             <div className="section-content">
-              <Education education={data.education} />
+              <Education education={data?.education} />
             </div>
           </section>
 
-          <section id="contact" className="section-wrapper">
+
+          {/* ================= CONTACT ================= */}
+
+          <section
+            id="contact"
+            className="section-wrapper"
+          >
             <div className="section-content">
-              <Contact profile={data.profile} />
+              <Contact profile={data?.profile} />
             </div>
           </section>
+
         </>
       )}
 
