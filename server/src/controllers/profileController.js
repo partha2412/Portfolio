@@ -1,5 +1,5 @@
 // src/controllers/profileController.js
-const Portfolio = require('../models/portfolio.js');
+const Portfolio = require('../models/Portfolio.js');
 
 const getProfile = async (req, res) => {
     try {
