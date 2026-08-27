@@ -3,61 +3,161 @@ export const mockData = {
         status: "Available for work",
         name: "Partha Singh",
         title: "Full-Stack Engineer & AI/ML Developer",
-        bio: "Building robust web applications, data-driven systems, and intelligent agent workflows.",
-        avatarUrl: '/pfp.avif',//"https://cdn.vectorstock.com/i/500p/13/44/gray-man-placeholder-portrait-vector-23511344.jpg",
+        bio: "Software Engineer with hands-on experience in full-stack development (MERN), database design (MySQL), data structures and algorithms, and applied machine learning. Skilled in building scalable web applications, designing efficient backend systems, and integrating intelligent features using modern AI techniques. Strong problem-solving mindset with a focus on clean architecture and real-world system design.",
+        avatarUrl: "/pfp.avif",
         github: "https://github.com/partha2412",
-        linkedin: "https://www.linkedin.com/in/partha-singh-a1b810376/",
-        resumeUrl: "https://example.com/resume.pdf",
+        linkedin: "https://www.linkedin.com/in/partha-singh-a1b810376",
+        resumeUrl: "",
         email: "parthasingh35@gmail.com"
     },
+
     skills: [
         {
-            category: "Frontend",
-            items: ["React.js", "JavaScript (ES6+)", "HTML5/CSS3", "Tailwind CSS"]
+            category: "Programming",
+            items: [
+                "Java",
+                "JavaScript",
+                "Python",
+                "C"
+            ]
         },
         {
-            category: "Backend & DB",
-            items: ["Node.js", "Express.js", "Python", "MongoDB", "PostgreSQL"]
+            category: "Frontend & Backend",
+            items: [
+                "Node.js",
+                "Express",
+                "React",
+                "Tailwind CSS",
+                "HTML",
+                "CSS",
+                "REST APIs Development"
+            ]
         },
         {
-            category: "AI & Analytics",
-            items: ["Machine Learning", "Data Analysis", "Python", "REST APIs"]
-        } // Fixed trailing comma here
+            category: "AI & Data Science",
+            items: [
+                "TensorFlow",
+                "NumPy",
+                "Pandas",
+                "Seaborn",
+                "Scikit-learn",
+                "Hugging Face",
+                "LLM API"
+            ]
+        },
+        {
+            category: "Database",
+            items: [
+                "MongoDB",
+                "PostgreSQL",
+                "MySQL"
+            ]
+        },
+        {
+            category: "Tools & Platforms",
+            items: [
+                "GitHub",
+                "Vercel",
+                "Render",
+                "Thunder Client"
+            ]
+        },
+        {
+            category: "Soft Skills",
+            items: [
+                "Problem Solving",
+                "Communication",
+                "Leadership"
+            ]
+        }
     ],
+
     projects: [
         {
             id: "1",
-            title: "Portfolio Web Application",
-            description: "Full-stack personal portfolio built with React and Express.",
-            technologies: ["React", "Node.js", "Express"],
-            githubUrl: "https://github.com/partha2412/portfolio",
-            liveUrl: "https://portfolio.vercel.app",
-            imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400"
+            title: "AI Explainer Chrome Extension",
+            description: "AI-powered Chrome extension that instantly explains selected text anywhere on the web using your preferred LLM.",
+            technologies: [
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "Chrome Extension",
+                "Manifest V3",
+                "OpenAI API",
+                "Gemini API",
+                "Claude API",
+                "Groq",
+                "Ollama"
+            ],
+            githubUrl: "https://github.com/partha2412",
+            liveUrl: "",
+            imageUrl: ""
         },
         {
             id: "2",
-            title: "AI Agent Workflow Engine",
-            description: "Automated workflow automation tool using AI integrations.",
-            technologies: ["Python", "Node.js", "FastAPI"],
-            githubUrl: "https://github.com/partha2412/ai-agent",
-            liveUrl: "https://portfolio.vercel.app",
-            imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400"
+            title: "Project Vision (E-commerce)",
+            description: "E-commerce website developed with MERN featuring fully authenticated user and admin access, dashboard, product inventory management, AI-integrated chatbot, and payment gateway.",
+            technologies: [
+                "Node.js",
+                "Express",
+                "JavaScript",
+                "Gemini API",
+                "MongoDB",
+                "MongoDB Vector Search",
+                "React",
+                "Tailwind CSS"
+            ],
+            githubUrl: "https://github.com/partha2412",
+            liveUrl: "https://project-vision-gules.vercel.app/",
+            imageUrl: ""
+        },
+        {
+            id: "3",
+            title: "Gallery-System",
+            description: "Full-stack gallery system enabling users to securely upload, manage, and delete images using React, Node.js, Express, MongoDB, Cloudinary, and JWT authentication, with unique user checking.",
+            technologies: [
+                "Node.js",
+                "Express",
+                "JavaScript",
+                "MongoDB Atlas",
+                "Cloudinary",
+                "JWT Authentication",
+                "React",
+                "Tailwind CSS"
+            ],
+            githubUrl: "https://github.com/partha2412",
+            liveUrl: "https://gallery-system-phi.vercel.app/",
+            imageUrl: ""
         }
     ],
+
     experiences: [
         {
-            role: "Machine Learning Intern",
-            company: "Intigrityfactor Innovations",
-            duration: "July 2026 - Present",
-            description: "Developed and optimized machine learning pipelines for analytical workflows."
+            role: "Applied Demand Forecasting",
+            company: "Industry-Oriented Guided Project",
+            duration: "Aug 2026 - Present",
+            description: "Industry-oriented guided project focused on demand forecasting using Python and time-series analysis. Working through data preprocessing, exploratory data analysis, forecasting model development, and model evaluation."
         }
     ],
+
     education: [
         {
-            degree: "B.Tech in Computer Science & Engineering (AI/ML)",
-            institution: "Techno International New Town",
-            year: "Pursuing",
-            details: "Specializing in Artificial Intelligence and Machine Learning."
-        } // Fixed trailing comma and extra empty space here
+            degree: "B.Tech in Artificial Intelligence & Machine Learning",
+            institution: "Maulana Abul Kalam Azad University of Technology (MAKAUT) - Techno International Newtown (TINT)",
+            year: "2023-2027",
+            details: "CGPA: 7.4983"
+        },
+        {
+            degree: "Secondary Education (10th)",
+            institution: "Vidyasagar Vidyapith Boys High School",
+            year: "2020",
+            details: "78% from West Bengal Board of Secondary Education (WBBSE)."
+        },
+        {
+            degree: "Higher Secondary Education (12th) - PCMB",
+            institution: "Vidyasagar Vidyapith Boys High School",
+            year: "2022",
+            details: "82% from West Bengal Council of Higher Secondary Education (WBCHSE)."
+        }
     ]
 };

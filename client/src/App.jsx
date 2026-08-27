@@ -188,7 +188,7 @@ export const App = () => {
 
           <footer className="footer">
             <div className="footer-inner">
-              Built with <span>♥</span> by {data?.profile?.name || 'Partha Singh'} · {new Date().getFullYear()}
+              Built by {data?.profile?.name || 'Partha Singh'} · {new Date().getFullYear()}
             </div>
           </footer>
         </>
