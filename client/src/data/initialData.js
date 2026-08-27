@@ -4,7 +4,7 @@ export const mockData = {
         name: "Partha Singh",
         title: "Full-Stack Engineer & AI/ML Developer",
         bio: "Software Engineer with hands-on experience in full-stack development (MERN), database design (MySQL), data structures and algorithms, and applied machine learning. Skilled in building scalable web applications, designing efficient backend systems, and integrating intelligent features using modern AI techniques. Strong problem-solving mindset with a focus on clean architecture and real-world system design.",
-        avatarUrl: "/pfp.avif",
+        avatarUrl: "/image.png",
         github: "https://github.com/partha2412",
         linkedin: "https://www.linkedin.com/in/partha-singh-a1b810376",
         resumeUrl: "",

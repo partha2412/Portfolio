@@ -72,28 +72,28 @@ export const Hero = ({ profile }) => {
 
           {profile.resumeUrl && (
             <button
-              onClick={handleDownloadCV}
-              disabled={isDownloading}
+              onClick={() => {
+                window.open(profile.resumeUrl, "_blank", "noopener,noreferrer");
+              }}
               className="btn-primary"
               type="button"
             >
-              {isDownloading ? (
-                <>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'spin-ring 1s linear infinite' }}>
-                    <path d="M21 12a9 9 0 1 1-6.219-8.56" />
-                  </svg>
-                  Downloading…
-                </>
-              ) : (
-                <>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                  Download CV
-                </>
-              )}
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              View CV
             </button>
           )}
         </div>
@@ -111,6 +111,12 @@ export const Hero = ({ profile }) => {
             height="294"
             fetchPriority="high"
             decoding="async"
+            onError={(e) => {
+              // Prevent infinite loop if fallback itself fails
+              if (e.currentTarget.src.endsWith('/pfp.avif')) return;
+
+              e.currentTarget.src = '/pfp.avif';
+            }}
           />
         </div>
       </div>
