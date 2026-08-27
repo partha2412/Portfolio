@@ -17,7 +17,7 @@ import { Admin } from './components/Admin';
 import './App.css';
 import './admin.css';
 
-const NAV_SECTIONS = ['hero', 'skills', 'projects', 'experience', 'education', 'contact'];
+const NAV_SECTIONS = ['about', 'skills', 'projects', 'experience', 'education', 'contact'];
 const NAV_LABELS = ['About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'];
 
 export const App = () => {
