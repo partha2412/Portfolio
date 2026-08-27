@@ -6,7 +6,7 @@ export const mockData = {
         bio: "Building robust web applications, data-driven systems, and intelligent agent workflows.",
         avatarUrl: '/pfp.avif',//"https://cdn.vectorstock.com/i/500p/13/44/gray-man-placeholder-portrait-vector-23511344.jpg",
         github: "https://github.com/partha2412",
-        linkedin: "https://linkedin.com/in/partha-singh",
+        linkedin: "https://www.linkedin.com/in/partha-singh-a1b810376/",
         resumeUrl: "https://example.com/resume.pdf",
         email: "parthasingh35@gmail.com"
     },
