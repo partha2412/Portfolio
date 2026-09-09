@@ -1,23 +1,53 @@
+// src/components/Experience.jsx
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const Experience = ({ experiences = [] }) => {
-    if (!experiences.length) return null;
+  const headRef = useScrollAnimation();
 
-    return (
-        <section id="experience" className="section">
-            <h2>Work Experience</h2>
-            <div className="timeline">
-                {experiences.map((exp, idx) => (
-                    <div key={idx} className="timeline-item">
-                        <div className="timeline-header">
-                            <h3>{exp.role}</h3>
-                            <span className="timeline-date">{exp.duration}</span>
-                        </div>
-                        <h4 className="company-name">{exp.company}</h4>
-                        <p>{exp.description}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
+  if (!experiences.length) return null;
+
+  return (
+    <section>
+      <div className="fade-in" ref={headRef}>
+        <span className="section-label">Career</span>
+        <h2 className="section-title">Work Experience</h2>
+        <p className="section-subtitle">
+          Places I've contributed and what I built there.
+        </p>
+      </div>
+
+      <div className="timeline">
+        {experiences.map((exp, idx) => (
+          <ExperienceItem key={idx} exp={exp} delay={idx} />
+        ))}
+      </div>
+    </section>
+  );
 };
+
+function ExperienceItem({ exp, delay }) {
+  const ref = useScrollAnimation();
+  return (
+    <div
+      className={`timeline-item fade-in fade-in-delay-${Math.min(delay + 1, 5)}`}
+      ref={ref}
+    >
+      <span className="timeline-dot" />
+      <div className="timeline-content">
+        <div className="timeline-header">
+          <h3 className="timeline-role">{exp.role}</h3>
+          {exp.duration && (
+            <span className="timeline-duration">{exp.duration}</span>
+          )}
+        </div>
+        {exp.company && (
+          <p className="timeline-company">{exp.company}</p>
+        )}
+        {exp.description && (
+          <p className="timeline-description">{exp.description}</p>
+        )}
+      </div>
+    </div>
+  );
+}
