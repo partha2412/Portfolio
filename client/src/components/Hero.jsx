@@ -99,27 +99,12 @@ export const Hero = ({ profile }) => {
         </div>
       </div>
 
-<<<<<<< HEAD
-            <div className="hero-image-wrapper">
-                <img
-                    src={"/my_image.jpg" || profile.avatarUrl}
-                    alt={profile.name}
-                    className="hero-avatar"
-                    width="400"
-                    height="400"
-                    fetchPriority="high"
-                    decoding="async"
-                />
-            </div>
-        </header>
-    );
-=======
       {/* ---- Avatar side ---- */}
       <div className="hero-avatar-wrapper fade-in fade-in-delay-2" ref={imgRef}>
         <div className="hero-avatar-glow" />
         <div className="hero-avatar-ring">
           <img
-            src={profile.avatarUrl || '/pfp.avif'}
+                      src={profile.avatarUrl || "/my_image.jpg"}
             alt={profile.name}
             className="hero-avatar"
             width="294"
@@ -128,9 +113,9 @@ export const Hero = ({ profile }) => {
             decoding="async"
             onError={(e) => {
               // Prevent infinite loop if fallback itself fails
-              if (e.currentTarget.src.endsWith('/pfp.avif')) return;
+              if (e.currentTarget.src.endsWith('/my_image.jpg')) return;
 
-              e.currentTarget.src = '/pfp.avif';
+              e.currentTarget.src = '/my_image.jpg';
             }}
           />
         </div>
@@ -138,5 +123,4 @@ export const Hero = ({ profile }) => {
 
     </header>
   );
->>>>>>> 91c02aadf11590b5a902dd1e137d59bd4dec6488
 };
