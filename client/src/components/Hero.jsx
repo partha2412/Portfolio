@@ -108,7 +108,7 @@ export const Hero = ({ profile }) => {
 
             <div className="hero-image-wrapper">
                 <img
-                    src={profile.avatarUrl || "/pfp.avif"}
+                    src={"/my_image.jpg" || profile.avatarUrl}
                     alt={profile.name}
                     className="hero-avatar"
                     width="400"

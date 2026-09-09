@@ -4,7 +4,7 @@ export const mockData = {
         name: "Partha Singh",
         title: "Full-Stack Engineer & AI/ML Developer",
         bio: "Building robust web applications, data-driven systems, and intelligent agent workflows.",
-        avatarUrl: '/pfp.avif',//"https://cdn.vectorstock.com/i/500p/13/44/gray-man-placeholder-portrait-vector-23511344.jpg",
+        avatarUrl: '/my_image.jpg',//"https://cdn.vectorstock.com/i/500p/13/44/gray-man-placeholder-portrait-vector-23511344.jpg",
         github: "https://github.com/partha2412",
         linkedin: "https://linkedin.com/in/partha-singh",
         resumeUrl: "https://example.com/resume.pdf",
